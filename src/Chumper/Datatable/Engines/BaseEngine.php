@@ -252,7 +252,7 @@ abstract class BaseEngine {
         $this->prepareEngine();
 
         $output = array(
-            "aaData" => $this->internalMake($this->columns, $this->searchColumns)->toArray(),
+            "aaData" => $this->internalMake($this->columns, $this->searchColumns)->values()->all(),
             "sEcho" => intval($this->sEcho),
             "iTotalRecords" => $this->totalCount(),
             "iTotalDisplayRecords" => $this->count(),
